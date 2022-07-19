@@ -4,17 +4,26 @@ class Person {
         this.apellidos = apellidos;
         this.altura = altura;
         this.peso = peso;
-        this.yearOfBirth;
+        this.yearOfBirth = undefined;
 
         this.IMC;
         this.tieneCoche = false;
         this.tieneMascota = false;
 
         this.hobbies = [];
+
     }
 
     calcIMC() {
         this.IMC = this.peso / (this.altura ** 2);
+    }
+
+    calcEdad() {
+        if (this.yearOfBirth) {
+            this.edad = new Date().getFullYear - this.yearOfBirth;
+        } else {
+            console.warn('No se ha podido calcular la edad porque el año de nacimiento es undefined')
+        }
     }
 
     printAll() {
@@ -28,11 +37,13 @@ class Person {
             'Tiene coche' + ' - ' + this.tieneCoche + '\n' +
             'Tiene Mascota' + ' - ' + this.tieneMascota + '\n'
         );
+
     }
 
     printHobbies() {
         console.log(this.hobbies);
     }
 }
+
 
 module.exports = Person;
