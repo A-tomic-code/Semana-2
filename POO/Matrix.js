@@ -17,7 +17,7 @@ class Matrix {
         this.alto = m;
 
         for (let i = 0; i < n; i++) {
-            this.matriz.push(new Vector(m, k).toArray());
+            this.matriz.push(new Vector(m, k));
         }
     }
 
@@ -28,19 +28,21 @@ class Matrix {
     */
 
     add(m) {
-        let matriz_temporal = [];
+        let matriz_temporal = new Matrix(0, 0, 0);
 
         if (m.ancho == this.ancho && m.alto == this.alto) {
 
             for (let i = 0; i < this.ancho; i++) {
 
-                let array_temporal = [];
+                let vector_temporal = new Vector();
 
                 for (let j = 0; j < this.alto; j++) {
-                    array_temporal.push(m.matriz[i][j] + this.matriz[i][j])
+                    vector_temporal.arr.push(this.matriz[i].arr[j] + m.matriz[i].arr[j])
                 }
+                matriz_temporal.alto = vector_temporal.arr.length;
+                matriz_temporal.matriz.push(vector_temporal)
+                matriz_temporal.ancho++;
 
-                matriz_temporal.push(array_temporal)
             }
 
         }
@@ -55,18 +57,20 @@ class Matrix {
     */
 
     subs(m) {
-        let matriz_temporal = [];
+        let matriz_temporal = new Matrix(0, 0, 0);
 
         if (m.ancho == this.ancho && m.alto == this.alto) {
             for (let i = 0; i < this.ancho; i++) {
 
-                let array_temporal = [];
+                let vector_temporal = new Vector(0, 0);
 
                 for (let j = 0; j < this.alto; j++) {
-                    array_temporal.push(m.matriz[i][j] - this.matriz[i][j]);
+                    vector_temporal.arr.push(this.matriz[i].arr[j] - m.matriz[i].arr[j]);
                 }
+                matriz_temporal.alto = vector_temporal.arr.length;
+                matriz_temporal.matriz.push(vector_temporal);
+                matriz_temporal.ancho++;
 
-                matriz_temporal.push(array_temporal);
             }
         }
 
@@ -80,17 +84,19 @@ class Matrix {
     */
 
     productNum(n) {
-        let matriz_temporal = [];
+        let matriz_temporal = new Matrix(0, 0, 0);
 
         for (let i = 0; i < this.ancho; i++) {
 
-            let array_temporal = [];
+            let vector_temporal = new Vector(0, 0);
 
             for (let j = 0; j < this.alto; j++) {
-                array_temporal.push(this.matriz[i][j] * n);
+                vector_temporal.arr.push(this.matriz[i].arr[j] * n);
             }
-
-            matriz_temporal.push(array_temporal);
+            
+            matriz_temporal.alto = vector_temporal.arr.length;
+            matriz_temporal.matriz.push(vector_temporal);
+            matriz_temporal.ancho++;
 
         }
 
@@ -105,20 +111,23 @@ class Matrix {
     */
 
     product(a) {
-        let matriz_temporal = [];
+        let matriz_temporal = new Matrix(0, 0, 0);
 
         if (this.alto == a.alto && this.ancho == a.ancho) {
 
             for (let i = 0; i < this.ancho; i++) {
-                let array_temporal = [];
+                let vector_temporal = new Vector(0, 0);
 
                 for (let j = 0; j < this.alto; j++) {
-                    array_temporal.push(this.matriz[i][j] * a.matriz[i][j]);
+                    vector_temporal.arr.push(this.matriz[i].arr[j] * a.matriz[i].arr[j]);
                 }
 
-                matriz_temporal.push(array_temporal);
+                matriz_temporal.alto = vector_temporal.arr.length;
+                matriz_temporal.matriz.push(vector_temporal);
+                matriz_temporal.ancho++;
             }
         }
+
 
         return matriz_temporal
     }

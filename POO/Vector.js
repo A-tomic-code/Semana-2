@@ -54,10 +54,6 @@ class Vector {
         return this.arr.map(numero => numero * n);
     }
 
-    toArray(){
-        return this.arr
-    }
-
 }
 
 module.exports = Vector;
