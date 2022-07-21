@@ -1,0 +1,22 @@
+{
+  "name": "change-case",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-tomic-code/Semana-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/A-tomic-code/Semana-2/issues"
+  },
+  "homepage": "https://github.com/A-tomic-code/Semana-2#readme",
+  "description": "",
+  "dependencies": {
+    "change-case": "^4.1.2"
+  }
+}

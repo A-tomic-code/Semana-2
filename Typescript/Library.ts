@@ -33,6 +33,7 @@ export class Library {
       salida += this.books[i].toString + '\n'
     }
 
+    return salida;
   }
 
   public getNumberOfBooks():number{

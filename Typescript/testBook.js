@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var Book_1 = require("./Book");
-var elQuijote = new Book_1.Boook("Don Quijote de la Mancha", 1345, "8468025380", "Miguel de Cervantes", "Santillana");
+var elQuijote = new Book_1.Book("Don Quijote de la Mancha", 1345, "8468025380", "Miguel de Cervantes", "Santillana");
 console.log(elQuijote);
 elQuijote.setTitle('titulo cambiad');
 elQuijote.setAuthor('autor cambiado');

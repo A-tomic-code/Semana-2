@@ -24,6 +24,7 @@ var Library = /** @class */ (function () {
         for (var i = 0; i < this.books.length; i++) {
             salida += this.books[i].toString + '\n';
         }
+        return salida;
     };
     Library.prototype.getNumberOfBooks = function () {
         return this.books.length;
