@@ -16,7 +16,7 @@ var Vector = /** @class */ (function () {
         var v = new Vector(0, 0);
         if (this.length == v1.length) {
             for (var i = 0; i < this.length; i++) {
-                v.elements.push(this.elements[i] + this.elements[i]);
+                v.elements.push(this.elements[i] + v1.elements[i]);
             }
             v.length = v.elements.length;
         }
@@ -49,6 +49,13 @@ var Vector = /** @class */ (function () {
         }
         v.length = v.elements.length;
         return v;
+    };
+    Vector.prototype.getElements = function () {
+        return this.elements;
+    };
+    Vector.prototype.setElements = function (value) {
+        this.elements = value;
+        this.length = this.elements.length;
     };
     return Vector;
 }());

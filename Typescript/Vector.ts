@@ -1,6 +1,7 @@
 export class Vector {
   private elements: number[] = [];
-  public length:number;
+
+  public length: number;
 
   constructor(n: number, k: number) {
     for (let i = 0; i < n; i++) {
@@ -19,7 +20,7 @@ export class Vector {
 
     if (this.length == v1.length) {
       for (let i = 0; i < this.length; i++) {
-        v.elements.push(this.elements[i] + this.elements[i]);
+        v.elements.push(this.elements[i] + v1.elements[i]);
       }
       v.length = v.elements.length;
     }
@@ -35,7 +36,6 @@ export class Vector {
         v.elements.push(this.elements[i] - this.elements[i]);
       }
       v.length = v.elements.length;
-
     }
 
     return v;
@@ -62,7 +62,14 @@ export class Vector {
     }
     v.length = v.elements.length;
 
-
     return v;
+  }
+
+  public getElements(): number[] {
+    return this.elements;
+  }
+  public setElements(value: number[]) {
+    this.elements = value;
+    this.length = this.elements.length
   }
 }

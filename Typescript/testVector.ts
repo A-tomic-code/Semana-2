@@ -1,6 +1,6 @@
 import { Vector } from "./Vector";
 
-let miVector = new Vector(5, 20);
+let miVector = new Vector(5, 12);
 let miVector2 = new Vector(5, 20);
 
 miVector.print();
